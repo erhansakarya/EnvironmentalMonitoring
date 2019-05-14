@@ -1,0 +1,10 @@
+15:18:15 **** Incremental Build of configuration Debug for project stm32f1_FreeRtos_ ****
+make -j4 all 
+arm-none-eabi-size   stm32f1_FreeRtos_.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11112	     20	   5108	  16240	   3f70	stm32f1_FreeRtos_.elf
+Finished building: default.size.stdout
+ 
+
+15:18:18 Build Finished. 0 errors, 0 warnings. (took 3s.78ms)
+

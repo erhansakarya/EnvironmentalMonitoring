@@ -1,0 +1,2 @@
+tsl2561.c:11:8:tsl2561_init	16	static
+tsl2561.c:19:6:tsl2561Task	24	static

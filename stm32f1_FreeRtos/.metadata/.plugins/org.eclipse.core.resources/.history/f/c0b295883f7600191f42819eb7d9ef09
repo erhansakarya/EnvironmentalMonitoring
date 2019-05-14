@@ -1,0 +1,26 @@
+/* Define to prevent recursive inclusion -------------------------------------*/
+#ifndef __ENVMONITOR_H
+#define __ENVMONITOR_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+/* Includes ------------------------------------------------------------------*/
+#include "stm32f1xx_hal.h"
+
+typedef struct{
+	uint8_t lux;
+}tsl2561_s;
+
+typedef struct{
+	tsl2561_s tsl2561;
+}sensor_s;
+
+typedef struct{
+	sensor_s sensor;
+}envmonitor_s;
+
+extern envmonitor_s envmonitor;
+
+#endif
