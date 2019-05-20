@@ -1,0 +1,24 @@
+#include "envmonitor.h"
+#include "ttp223b.h"
+
+uint8_t TTP223B_init(void){
+
+	uint8_t error = 0;
+
+
+	return error;
+
+}
+
+
+/**
+  * @brief  This function is executed in case of error occurrence.
+  * @retval None
+  */
+static void Error_Handler(void)
+{
+  /* USER CODE BEGIN Error_Handler_Debug */
+  /* User can add his own implementation to report the HAL error return state */
+
+  /* USER CODE END Error_Handler_Debug */
+}

@@ -19,8 +19,13 @@ typedef struct{
 }tsl2561_s;
 
 typedef struct{
+	uint8_t touchState;
+}ttp223b_s;
+
+typedef struct{
 	htu21d_s htu21d;
 	tsl2561_s tsl2561;
+	ttp223b_s ttp223b;
 }sensor_s;
 
 typedef struct{
@@ -33,6 +38,7 @@ extern envmonitor_s envmonitor;
 						0,	\
 						0,	\
 						0.00,	\
+						0,	\
 						}	\
 
 uint8_t ENVMNTR_init(void);

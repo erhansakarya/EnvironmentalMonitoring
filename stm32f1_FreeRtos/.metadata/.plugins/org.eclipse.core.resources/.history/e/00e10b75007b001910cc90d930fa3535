@@ -1,0 +1,35 @@
+#include "envmonitor.h"
+#include "ttp223b.h"
+
+uint8_t TTP223B_init(void){
+
+	uint8_t error = 0;
+
+	GPIO_InitTypeDef GPIO_InitStruct;
+
+	__HAL_RCC_GPIOC_CLK_ENABLE();
+
+	GPIO_InitStruct.Pin = GPIO_PIN_0;
+	GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
+
+	HAL_GPIO_Init(GPIOG, &GPIO_InitStruct);
+
+	HAL_NVIC_EnableIRQ(EXTI0_IRQn);
+
+	return error;
+
+}
+
+
+/**
+  * @brief  This function is executed in case of error occurrence.
+  * @retval None
+  */
+static void Error_Handler(void)
+{
+  /* USER CODE BEGIN Error_Handler_Debug */
+  /* User can add his own implementation to report the HAL error return state */
+
+  /* USER CODE END Error_Handler_Debug */
+}

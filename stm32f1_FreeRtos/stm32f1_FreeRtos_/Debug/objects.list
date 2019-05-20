@@ -8,6 +8,7 @@
 "Core/Src/stm32f1xx_it.o"
 "Core/Src/system_stm32f1xx.o"
 "Core/Src/tsl2561.o"
+"Core/Src/ttp223.o"
 "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o"
 "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o"
 "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o"

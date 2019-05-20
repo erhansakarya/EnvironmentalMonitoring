@@ -14,6 +14,7 @@
 
 #include "envmonitor.h"
 #include "tsl2561.h"
+#include "ttp223b.h"
 #include "htu21d.h"
 
 /**

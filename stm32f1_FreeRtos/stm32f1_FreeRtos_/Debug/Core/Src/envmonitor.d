@@ -40,7 +40,7 @@ Core/Src/envmonitor.o: ../Core/Src/envmonitor.c ../Inc/main.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
- ../Core/Inc/envmonitor.h ../Core/Inc/tsl2561.h
+ ../Core/Inc/envmonitor.h ../Core/Inc/tsl2561.h ../Core/Inc/ttp223b.h
 
 ../Inc/main.h:
 
@@ -129,3 +129,5 @@ Core/Src/envmonitor.o: ../Core/Src/envmonitor.c ../Inc/main.h \
 ../Core/Inc/envmonitor.h:
 
 ../Core/Inc/tsl2561.h:
+
+../Core/Inc/ttp223b.h:

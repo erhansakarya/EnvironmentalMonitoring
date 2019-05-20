@@ -3,6 +3,7 @@
 
 #include "envmonitor.h"
 #include "tsl2561.h"
+#include "ttp223b.h"
 
 envmonitor_s envmonitor = INIT_ENVMONITOR;
 
@@ -33,6 +34,7 @@ uint8_t ENVMNTR_init(void){
 	MX_I2C1_Init();
 
 	error = TSL2561_init();
+	error = TTP223B_init();
 
 	return error;
 

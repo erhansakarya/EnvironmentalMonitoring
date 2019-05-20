@@ -1,8 +1,8 @@
-envmonitor.c:20:9:ENVMNTR_init	16	static
-envmonitor.c:41:9:ENVMNTR_createTasks	24	static
-envmonitor.c:64:6:SystemClock_Config	72	static
-envmonitor.c:101:13:MX_I2C1_Init	8	static
-envmonitor.c:135:13:MX_USART2_UART_Init	8	static
-envmonitor.c:168:13:MX_GPIO_Init	40	static
-envmonitor.c:208:6:HAL_TIM_PeriodElapsedCallback	16	static
-envmonitor.c:225:13:Error_Handler	4	static
+envmonitor.c:21:9:ENVMNTR_init	16	static
+envmonitor.c:43:9:ENVMNTR_createTasks	24	static
+envmonitor.c:66:6:SystemClock_Config	72	static
+envmonitor.c:103:13:MX_I2C1_Init	8	static
+envmonitor.c:137:13:MX_USART2_UART_Init	8	static
+envmonitor.c:170:13:MX_GPIO_Init	40	static
+envmonitor.c:210:6:HAL_TIM_PeriodElapsedCallback	16	static
+envmonitor.c:227:13:Error_Handler	4	static
