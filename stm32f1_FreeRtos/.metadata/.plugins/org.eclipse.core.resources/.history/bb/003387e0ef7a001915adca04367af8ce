@@ -1,0 +1,26 @@
+#include "main.h"
+#include "cmsis_os.h"
+
+#include "envmonitor.h"
+#include "tsl2561.h"
+
+uint8_t ENVMNTR_init(void){
+
+	uint8_t error = 0;
+
+	error = TSL2561_init();
+
+	return error;
+
+}
+
+uint8_t ENVMNTR_createTasks(void){
+
+	uint8_t error = 0;
+
+	TaskHandle_t TSL2561_handler = NULL;
+	TaskHandle_t htu21dHandler = NULL;
+
+	return error;
+
+}

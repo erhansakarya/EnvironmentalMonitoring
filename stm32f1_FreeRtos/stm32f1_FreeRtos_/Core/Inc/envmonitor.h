@@ -15,7 +15,7 @@ typedef struct{
 }htu21d_s;
 
 typedef struct{
-	uint8_t lux;
+	float lux;
 }tsl2561_s;
 
 typedef struct{
@@ -32,7 +32,10 @@ extern envmonitor_s envmonitor;
 #define INIT_ENVMONITOR {	\
 						0,	\
 						0,	\
-						0,	\
+						0.00,	\
 						}	\
+
+uint8_t ENVMNTR_init(void);
+uint8_t ENVMNTR_createTasks(void);
 
 #endif

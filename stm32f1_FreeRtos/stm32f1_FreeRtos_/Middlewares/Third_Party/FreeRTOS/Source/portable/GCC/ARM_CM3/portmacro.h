@@ -92,7 +92,7 @@ extern "C" {
 #define portLONG		long
 #define portSHORT		short
 #define portSTACK_TYPE	uint32_t
-#define portBASE_TYPE	long	/* NOTE: This is always defined as the most efficient data type for the architecture.  Typically,this isa 32-bittype on a 32-bitarchitecture, a 16-bit type on a 16-bit architecture, and an 8-bit type on an 8-bit architecture.  */
+#define portBASE_TYPE	long
 
 typedef portSTACK_TYPE StackType_t;
 typedef long BaseType_t;

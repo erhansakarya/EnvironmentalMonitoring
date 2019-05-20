@@ -1,0 +1,10 @@
+#include "envmonitor.h"
+#include "tsl2561.h"
+
+uint8_t ENVMONITOR_init(void){
+
+	uint8_t error = 0;
+
+	error = TSL2561_init();
+
+}

@@ -1,7 +1,28 @@
-15:18:15 **** Incremental Build of configuration Debug for project stm32f1_FreeRtos_ ****
+15:34:28 **** Incremental Build of configuration Debug for project stm32f1_FreeRtos_ ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/envmonitor.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/envmonitor.d" -MT"Core/Src/envmonitor.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/envmonitor.o"
+In file included from ../Core/Src/envmonitor.c:4:0:
+../Core/Inc/envmonitor.h:32:25: warning: missing braces around initializer [-Wmissing-braces]
+ #define INIT_ENVMONITOR { \
+                         ^
+../Core/Src/envmonitor.c:7:27: note: in expansion of macro 'INIT_ENVMONITOR'
+ envmonitor_s envmonitor = INIT_ENVMONITOR;
+                           ^~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "stm32f1_FreeRtos_.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\erhan\github\EnvironmentalMonitoring\stm32f1_FreeRtos\stm32f1_FreeRtos_\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f1_FreeRtos_.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32f1_FreeRtos_.elf
+ 
+arm-none-eabi-objdump -h -S  stm32f1_FreeRtos_.elf  > "stm32f1_FreeRtos_.list"
+arm-none-eabi-size   stm32f1_FreeRtos_.elf 
+   text	   data	    bss	    dec	    hex	filename
+  24516	    124	   5196	  29836	   748c	stm32f1_FreeRtos_.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32f1_FreeRtos_.list
+ 
+15:34:37 **** Incremental Build of configuration Debug for project stm32f1_FreeRtos_ ****
 make -j4 all 
 arm-none-eabi-size   stm32f1_FreeRtos_.elf 
    text	   data	    bss	    dec	    hex	filename
-  11112	     20	   5108	  16240	   3f70	stm32f1_FreeRtos_.elf
+  24516	    124	   5196	  29836	   748c	stm32f1_FreeRtos_.elf
 Finished building: default.size.stdout
  

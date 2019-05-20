@@ -102,10 +102,10 @@
 #define configCPU_CLOCK_HZ                       ( SystemCoreClock )
 #define configTICK_RATE_HZ                       ((TickType_t)1000)
 #define configMAX_PRIORITIES                     ( 7 )
-#define configMINIMAL_STACK_SIZE                 ((uint16_t)128)	/* NOTE: 128 * 4 Bytes */
+#define configMINIMAL_STACK_SIZE                 ((uint16_t)128)
 #define configTOTAL_HEAP_SIZE                    ((size_t)3072)
-#define configMAX_TASK_NAME_LEN                  ( 16 )	/* NOTE: the maximum length a task name can take */
-#define configUSE_16_BIT_TICKS                   0	/* NOTE: TickType_t is defined as uint32_t because define is zero. If define is 1, TickType_t is defined as uint16_t */
+#define configMAX_TASK_NAME_LEN                  ( 16 )
+#define configUSE_16_BIT_TICKS                   0
 #define configUSE_MUTEXES                        1
 #define configQUEUE_REGISTRY_SIZE                8
 #define configUSE_PORT_OPTIMISED_TASK_SELECTION  1
