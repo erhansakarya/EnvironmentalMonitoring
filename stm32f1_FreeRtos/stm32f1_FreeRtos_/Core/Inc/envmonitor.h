@@ -10,8 +10,8 @@ extern "C" {
 #include "stm32f1xx_hal.h"
 
 typedef struct{
-	int8_t temperature;
-	uint8_t humidity;
+	float temperature;
+	float humidity;
 }htu21d_s;
 
 typedef struct{
@@ -35,8 +35,8 @@ typedef struct{
 extern envmonitor_s envmonitor;
 
 #define INIT_ENVMONITOR {	\
-						0,	\
-						0,	\
+						0.00,	\
+						0.00,	\
 						0.00,	\
 						0,	\
 						}	\

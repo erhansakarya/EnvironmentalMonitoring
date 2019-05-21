@@ -13,9 +13,6 @@
 #include "cmsis_os.h"
 
 #include "envmonitor.h"
-#include "tsl2561.h"
-#include "ttp223b.h"
-#include "htu21d.h"
 
 /**
   * @brief  The application entry point.

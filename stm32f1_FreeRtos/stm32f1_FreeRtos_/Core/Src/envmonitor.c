@@ -4,6 +4,7 @@
 #include "envmonitor.h"
 #include "tsl2561.h"
 #include "ttp223b.h"
+#include "htu21d.h"
 
 envmonitor_s envmonitor = INIT_ENVMONITOR;
 
@@ -35,6 +36,7 @@ uint8_t ENVMNTR_init(void){
 
 	error = TSL2561_init();
 	error = TTP223B_init();
+	error = HTU21D_init();
 
 	return error;
 
@@ -44,9 +46,17 @@ uint8_t ENVMNTR_createTasks(void){
 
 	uint8_t error = 0;
 
-	/* Create tasks */
-	if(pdPASS != xTaskCreate(TSL2561_handler, "TSL2561_handler",
-					configMINIMAL_STACK_SIZE, (void *)&envmonitor.sensor.tsl2561.lux,
+//	/* NOTE: Create TSL2561 task */
+//	if(pdPASS != xTaskCreate(TSL2561_handler, "TSL2561_handler",
+//					configMINIMAL_STACK_SIZE, (void *)&envmonitor.sensor.tsl2561.lux,
+//					configMAX_PRIORITIES - 1, NULL)){
+//
+//		  return -1;
+//	}
+
+	/* NOTE: Create HTU21D task */
+	if(pdPASS != xTaskCreate(HTU21D_handler, "HTU21D_handler",
+					configMINIMAL_STACK_SIZE, (void *)&envmonitor.sensor.htu21d,
 					configMAX_PRIORITIES - 1, NULL)){
 
 		  return -1;
