@@ -10,7 +10,6 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "cmsis_os.h"
 
 #include "envmonitor.h"
 
@@ -20,6 +19,8 @@
   */
 int main(void)
 {
+
+	DWT->CTRL |= (1 << 0);	/* NOTE: Enable cycle counter register for timestamp */
 
 	ENVMNTR_init();
 

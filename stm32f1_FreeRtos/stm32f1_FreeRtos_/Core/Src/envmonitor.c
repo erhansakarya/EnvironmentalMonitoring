@@ -1,5 +1,7 @@
 #include "main.h"
-#include "cmsis_os.h"
+
+#include "FreeRTOS.h"
+#include "task.h"
 
 #include "envmonitor.h"
 #include "tsl2561.h"
@@ -46,13 +48,19 @@ uint8_t ENVMNTR_createTasks(void){
 
 	uint8_t error = 0;
 
-//	/* NOTE: Create TSL2561 task */
-//	if(pdPASS != xTaskCreate(TSL2561_handler, "TSL2561_handler",
-//					configMINIMAL_STACK_SIZE, (void *)&envmonitor.sensor.tsl2561.lux,
-//					configMAX_PRIORITIES - 1, NULL)){
-//
-//		  return -1;
-//	}
+	NVIC_SetPriorityGrouping( 0 );
+
+	/* NOTE: Start Segger SysView */
+	//SEGGER_SYSVIEW_Conf();
+	//SEGGER_SYSVIEW_Start();
+
+	/* NOTE: Create TSL2561 task */
+	if(pdPASS != xTaskCreate(TSL2561_handler, "TSL2561_handler",
+					configMINIMAL_STACK_SIZE, (void *)&envmonitor.sensor.tsl2561.lux,
+					configMAX_PRIORITIES - 1, NULL)){
+
+		  return -1;
+	}
 
 	/* NOTE: Create HTU21D task */
 	if(pdPASS != xTaskCreate(HTU21D_handler, "HTU21D_handler",
@@ -88,7 +96,8 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL16;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
-    Error_Handler();
+
+	  Error_Handler();
   }
   /** Initializes the CPU, AHB and APB busses clocks
   */
