@@ -1374,3 +1374,39 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY org.eclipse.cdt.core 1 0 2019-05-21 18:08:24.473
 !MESSAGE Indexed 'stm32f1_FreeRtos_' (35 sources, 127 headers) in 13 sec: 11,340 declarations; 45,626 references; 1 unresolved inclusions; 181 syntax errors; 61 unresolved names (0.11%)
+!SESSION 2019-05-21 19:28:29.721 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_202
+java.vendor=AdoptOpenJdk
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 4 4 2019-05-21 19:29:32.052
+!MESSAGE Type or version is empty: ; 
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 2 2 2019-05-21 19:29:32.089
+!MESSAGE Falling back to default toolchain
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 4 4 2019-05-21 19:29:32.375
+!MESSAGE Type or version is empty: ; 
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 2 2 2019-05-21 19:29:32.399
+!MESSAGE Falling back to default toolchain
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 4 4 2019-05-21 19:29:32.407
+!MESSAGE Type or version is empty: ; 
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 2 2 2019-05-21 19:29:32.414
+!MESSAGE Falling back to default toolchain
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 4 4 2019-05-21 19:29:32.421
+!MESSAGE Type or version is empty: ; 
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 2 2 2019-05-21 19:29:32.428
+!MESSAGE Falling back to default toolchain
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2019-05-21 19:29:50.387
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-05-21 19:32:51.219
+!MESSAGE Indexed 'stm32f1_FreeRtos_' (39 sources, 138 headers) in 24,3 sec: 12.671 declarations; 51.408 references; 0 unresolved inclusions; 181 syntax errors; 60 unresolved names (%0,094)

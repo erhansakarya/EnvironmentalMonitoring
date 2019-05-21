@@ -89,6 +89,9 @@ static uint8_t HTU21D_configUserRegister(HTU21D_measRes_e measRes){
 
 void HTU21D_handler(void *htu21d){
 
+	if(htu21d == NULL)
+		Error_Handler();
+
 	uint8_t pData[2];
 	uint8_t temp[3];
 	uint8_t hum[3];
@@ -150,6 +153,9 @@ void HTU21D_handler(void *htu21d){
 }
 
 static void calculateTempHum(uint16_t *rawValues, void *htu21d){
+
+	if(rawValues == NULL || htu21d == NULL)
+		Error_Handler();
 
 	htu21d_s *HTU21D_temporary = (htu21d_s *) htu21d;
 

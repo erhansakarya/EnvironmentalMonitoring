@@ -1,4 +1,4 @@
 tsl2561.c:17:9:TSL2561_init	24	static
 tsl2561.c:87:6:TSL2561_handler	32	static
-tsl2561.c:160:16:TSL2561_calculateLux	40	static
-tsl2561.c:200:13:Error_Handler	4	static
+tsl2561.c:163:16:TSL2561_calculateLux	40	static
+tsl2561.c:206:13:Error_Handler	4	static

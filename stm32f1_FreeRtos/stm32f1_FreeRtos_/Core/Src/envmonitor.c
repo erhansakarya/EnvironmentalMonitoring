@@ -48,11 +48,11 @@ uint8_t ENVMNTR_createTasks(void){
 
 	uint8_t error = 0;
 
-	NVIC_SetPriorityGrouping( 0 );
+	NVIC_SetPriorityGrouping(0);	/* NOTE: For Segger Systemview */
 
 	/* NOTE: Start Segger SysView */
-	//SEGGER_SYSVIEW_Conf();
-	//SEGGER_SYSVIEW_Start();
+	SEGGER_SYSVIEW_Conf();
+	SEGGER_SYSVIEW_Start();
 
 	/* NOTE: Create TSL2561 task */
 	if(pdPASS != xTaskCreate(TSL2561_handler, "TSL2561_handler",

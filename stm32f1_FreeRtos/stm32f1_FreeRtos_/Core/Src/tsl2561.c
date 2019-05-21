@@ -86,6 +86,9 @@ uint8_t TSL2561_init(void){
 
 void TSL2561_handler(void *lux){
 
+	if(lux == NULL)
+		Error_Handler();
+
 	for(;;){
 
 		uint8_t pData[2];
@@ -158,6 +161,9 @@ void TSL2561_handler(void *lux){
 }
 
 static uint8_t TSL2561_calculateLux(uint16_t *adcData, float *luxVal){
+
+	if(adcData == NULL || luxVal == NULL)
+		Error_Handler();
 
 	float divAdcData = ((float)adcData[1] / (float)adcData[0]);
 	uint8_t error = 0;

@@ -11,6 +11,9 @@ RM := rm -rf
 -include ThirdParty/freeRTOS/org/Source/portable/MemMang/subdir.mk
 -include ThirdParty/freeRTOS/org/Source/portable/GCC/ARM_CM3/subdir.mk
 -include ThirdParty/freeRTOS/org/Source/subdir.mk
+-include ThirdParty/SEGGER/SEGGER/subdir.mk
+-include ThirdParty/SEGGER/OS/subdir.mk
+-include ThirdParty/SEGGER/Config/subdir.mk
 -include Startup/subdir.mk
 -include Src/subdir.mk
 -include Drivers/STM32F1xx_HAL_Driver/Src/subdir.mk

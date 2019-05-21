@@ -20,6 +20,9 @@ Core/Src \
 Drivers/STM32F1xx_HAL_Driver/Src \
 Src \
 Startup \
+ThirdParty/SEGGER/Config \
+ThirdParty/SEGGER/OS \
+ThirdParty/SEGGER/SEGGER \
 ThirdParty/freeRTOS/org/Source \
 ThirdParty/freeRTOS/org/Source/portable/GCC/ARM_CM3 \
 ThirdParty/freeRTOS/org/Source/portable/MemMang \

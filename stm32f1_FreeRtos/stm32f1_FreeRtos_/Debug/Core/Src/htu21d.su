@@ -2,5 +2,5 @@ htu21d.c:19:9:HTU21D_init	16	static
 htu21d.c:30:16:HTU21D_softReset	24	static
 htu21d.c:51:16:HTU21D_configUserRegister	32	static
 htu21d.c:90:6:HTU21D_handler	40	static
-htu21d.c:152:13:calculateTempHum	32	static
-htu21d.c:165:13:Error_Handler	4	static
+htu21d.c:155:13:calculateTempHum	32	static
+htu21d.c:171:13:Error_Handler	4	static
