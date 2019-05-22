@@ -1,14 +1,33 @@
-19:48:16 **** Incremental Build of configuration Debug for project stm32f1_FreeRtos_ ****
+09:59:41 **** Incremental Build of configuration Debug for project stm32f1_FreeRtos_ ****
 make -j4 all 
-arm-none-eabi-gcc "../Core/Src/htu21d.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I"C:/Users/erhan/github/EnvironmentalMonitoring/stm32f1_FreeRtos/stm32f1_FreeRtos_/ThirdParty/freeRTOS/org/Source/include" -I"C:/Users/erhan/github/EnvironmentalMonitoring/stm32f1_FreeRtos/stm32f1_FreeRtos_/ThirdParty/SEGGER/Config" -I"C:/Users/erhan/github/EnvironmentalMonitoring/stm32f1_FreeRtos/stm32f1_FreeRtos_/ThirdParty/SEGGER/OS" -I"C:/Users/erhan/github/EnvironmentalMonitoring/stm32f1_FreeRtos/stm32f1_FreeRtos_/ThirdParty/SEGGER/SEGGER" -I"C:/Users/erhan/github/EnvironmentalMonitoring/stm32f1_FreeRtos/stm32f1_FreeRtos_/Config" -I"C:/Users/erhan/github/EnvironmentalMonitoring/stm32f1_FreeRtos/stm32f1_FreeRtos_/ThirdParty/freeRTOS/org/Source/portable/GCC/ARM_CM3" -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/erhan/github/EnvironmentalMonitoring/stm32f1_FreeRtos/stm32f1_FreeRtos_/Core/Inc" -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/htu21d.d" -MT"Core/Src/htu21d.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/htu21d.o"
-arm-none-eabi-gcc "../Core/Src/tsl2561.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I"C:/Users/erhan/github/EnvironmentalMonitoring/stm32f1_FreeRtos/stm32f1_FreeRtos_/ThirdParty/freeRTOS/org/Source/include" -I"C:/Users/erhan/github/EnvironmentalMonitoring/stm32f1_FreeRtos/stm32f1_FreeRtos_/ThirdParty/SEGGER/Config" -I"C:/Users/erhan/github/EnvironmentalMonitoring/stm32f1_FreeRtos/stm32f1_FreeRtos_/ThirdParty/SEGGER/OS" -I"C:/Users/erhan/github/EnvironmentalMonitoring/stm32f1_FreeRtos/stm32f1_FreeRtos_/ThirdParty/SEGGER/SEGGER" -I"C:/Users/erhan/github/EnvironmentalMonitoring/stm32f1_FreeRtos/stm32f1_FreeRtos_/Config" -I"C:/Users/erhan/github/EnvironmentalMonitoring/stm32f1_FreeRtos/stm32f1_FreeRtos_/ThirdParty/freeRTOS/org/Source/portable/GCC/ARM_CM3" -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/erhan/github/EnvironmentalMonitoring/stm32f1_FreeRtos/stm32f1_FreeRtos_/Core/Inc" -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/tsl2561.d" -MT"Core/Src/tsl2561.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/tsl2561.o"
+arm-none-eabi-gcc "../Core/Src/ttp223.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I"C:/Users/erhan/github/EnvironmentalMonitoring/stm32f1_FreeRtos/stm32f1_FreeRtos_/ThirdParty/freeRTOS/org/Source/include" -I"C:/Users/erhan/github/EnvironmentalMonitoring/stm32f1_FreeRtos/stm32f1_FreeRtos_/ThirdParty/SEGGER/Config" -I"C:/Users/erhan/github/EnvironmentalMonitoring/stm32f1_FreeRtos/stm32f1_FreeRtos_/ThirdParty/SEGGER/OS" -I"C:/Users/erhan/github/EnvironmentalMonitoring/stm32f1_FreeRtos/stm32f1_FreeRtos_/ThirdParty/SEGGER/SEGGER" -I"C:/Users/erhan/github/EnvironmentalMonitoring/stm32f1_FreeRtos/stm32f1_FreeRtos_/Config" -I"C:/Users/erhan/github/EnvironmentalMonitoring/stm32f1_FreeRtos/stm32f1_FreeRtos_/ThirdParty/freeRTOS/org/Source/portable/GCC/ARM_CM3" -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/erhan/github/EnvironmentalMonitoring/stm32f1_FreeRtos/stm32f1_FreeRtos_/Core/Inc" -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/ttp223.d" -MT"Core/Src/ttp223.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/ttp223.o"
+../Core/Src/ttp223.c:56:13: warning: 'Error_Handler' defined but not used [-Wunused-function]
+ static void Error_Handler(void)
+             ^~~~~~~~~~~~~
 arm-none-eabi-gcc -o "stm32f1_FreeRtos_.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\erhan\github\EnvironmentalMonitoring\stm32f1_FreeRtos\stm32f1_FreeRtos_\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f1_FreeRtos_.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: stm32f1_FreeRtos_.elf
  
 arm-none-eabi-objdump -h -S  stm32f1_FreeRtos_.elf  > "stm32f1_FreeRtos_.list"
 arm-none-eabi-size   stm32f1_FreeRtos_.elf 
    text	   data	    bss	    dec	    hex	filename
-  32284	    124	   7884	  40292	   9d64	stm32f1_FreeRtos_.elf
+  32300	    124	   7884	  40308	   9d74	stm32f1_FreeRtos_.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32f1_FreeRtos_.list
+ 
+10:16:17 **** Incremental Build of configuration Debug for project stm32f1_FreeRtos_ ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/ttp223.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I"C:/Users/erhan/github/EnvironmentalMonitoring/stm32f1_FreeRtos/stm32f1_FreeRtos_/ThirdParty/freeRTOS/org/Source/include" -I"C:/Users/erhan/github/EnvironmentalMonitoring/stm32f1_FreeRtos/stm32f1_FreeRtos_/ThirdParty/SEGGER/Config" -I"C:/Users/erhan/github/EnvironmentalMonitoring/stm32f1_FreeRtos/stm32f1_FreeRtos_/ThirdParty/SEGGER/OS" -I"C:/Users/erhan/github/EnvironmentalMonitoring/stm32f1_FreeRtos/stm32f1_FreeRtos_/ThirdParty/SEGGER/SEGGER" -I"C:/Users/erhan/github/EnvironmentalMonitoring/stm32f1_FreeRtos/stm32f1_FreeRtos_/Config" -I"C:/Users/erhan/github/EnvironmentalMonitoring/stm32f1_FreeRtos/stm32f1_FreeRtos_/ThirdParty/freeRTOS/org/Source/portable/GCC/ARM_CM3" -I../Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/erhan/github/EnvironmentalMonitoring/stm32f1_FreeRtos/stm32f1_FreeRtos_/Core/Inc" -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/ttp223.d" -MT"Core/Src/ttp223.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/ttp223.o"
+../Core/Src/ttp223.c:56:13: warning: 'Error_Handler' defined but not used [-Wunused-function]
+ static void Error_Handler(void)
+             ^~~~~~~~~~~~~
+arm-none-eabi-gcc -o "stm32f1_FreeRtos_.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\erhan\github\EnvironmentalMonitoring\stm32f1_FreeRtos\stm32f1_FreeRtos_\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f1_FreeRtos_.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32f1_FreeRtos_.elf
+ 
+arm-none-eabi-objdump -h -S  stm32f1_FreeRtos_.elf  > "stm32f1_FreeRtos_.list"
+arm-none-eabi-size   stm32f1_FreeRtos_.elf 
+   text	   data	    bss	    dec	    hex	filename
+  32300	    124	   7884	  40308	   9d74	stm32f1_FreeRtos_.elf
 Finished building: default.size.stdout
  
 Finished building: stm32f1_FreeRtos_.list

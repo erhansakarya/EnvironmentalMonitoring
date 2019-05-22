@@ -1,6 +1,8 @@
 #include "envmonitor.h"
 #include "ttp223b.h"
 
+#include "SEGGER_SYSVIEW_FreeRTOS.h"
+
 uint8_t TTP223B_init(void){
 
 	uint8_t error = 0;
@@ -24,7 +26,15 @@ uint8_t TTP223B_init(void){
 /* NOTE: This is IRQHandler */
 void EXTI0_IRQHandler(void){
 
+#ifdef DEBUG
+	traceISR_ENTER();
+#endif
+
 	HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0);	/* NOTE: This calls HAL_GPIO_EXTI_Callback function */
+
+#ifdef DEBUG
+	traceISR_EXIT();
+#endif
 
 }
 
