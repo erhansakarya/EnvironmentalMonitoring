@@ -1,0 +1,110 @@
+#include <math.h>
+#include <string.h>
+
+#include "FreeRTOS.h"
+#include "task.h"
+#include "timers.h"
+#include "queue.h"
+#include "semphr.h"
+#include "event_groups.h"
+
+#include "envmonitor.h"
+#include "tsl2561.h"
+
+static uint8_t TSL2561_calculateLux(uint16_t *adcData, float *luxVal);
+static void Error_Handler(void);
+
+uint8_t NRF24L01Plus_init(void){
+
+	uint8_t pData[2];
+	uint8_t error = 0;
+
+	memset(pData, 0, (sizeof(pData) / sizeof(pData[0])));
+
+	/* NOTE: Power up the device */
+	pData[0] = TSL2561_COMMAND_REG | TSL2561_CONTROL;
+	pData[1] = TSL2561_POWER_UP;
+	if(HAL_I2C_Master_Transmit(&hi2c1, TSL2561_ADDR_FLOAT, pData,
+			(sizeof(pData) / sizeof(pData[0])), HAL_MAX_DELAY) != HAL_OK){
+
+		Error_Handler();
+	}
+
+//	/* NOTE: Get power state */
+//	memset(pData, 0, (sizeof(pData) / sizeof(pData[0])));
+//	if(HAL_I2C_Master_Receive(&hi2c1, TSL2561_ADDR_FLOAT, pData,
+//			1, HAL_MAX_DELAY) != HAL_OK ){
+//
+//		Error_Handler();
+//	}
+//
+//	if(pData[0] != 0x03){
+//
+//		error = 1;
+//
+//	}
+
+	/* NOTE: Get Device ID */
+	memset(pData, 0, (sizeof(pData) / sizeof(pData[0])));
+	pData[0] = TSL2561_COMMAND_REG | TSL2561_ID;
+	if(HAL_I2C_Master_Transmit(&hi2c1, TSL2561_ADDR_FLOAT, pData,
+			1, HAL_MAX_DELAY) != HAL_OK ){
+
+		Error_Handler();
+	}
+
+	memset(pData, 0, (sizeof(pData) / sizeof(pData[0])));
+	if(HAL_I2C_Master_Receive(&hi2c1, TSL2561_ADDR_FLOAT, pData,
+			1, HAL_MAX_DELAY) != HAL_OK ){
+
+		Error_Handler();
+	}
+
+	if((pData[0] & 0xF0) != TSL2561_DEV_ID){
+		error = 1;
+	}
+
+	/* NOTE: Configure Timing Register */
+	memset(pData, 0, (sizeof(pData) / sizeof(pData[0])));
+	pData[0] = TSL2561_COMMAND_REG | TSL2561_TIMING;
+	pData[1] = 0x00;	/* NOTE: integration time is 13.7ms and 16x gain */
+	if(HAL_I2C_Master_Transmit(&hi2c1, TSL2561_ADDR_FLOAT, pData,
+			(sizeof(pData) / sizeof(pData[0])), HAL_MAX_DELAY) != HAL_OK){
+
+		Error_Handler();
+	}
+
+
+	/* NOTE: Configure Interrupt Threshold registers */
+
+
+	/* NOTE: Set interrupt control register */
+
+	return error;
+
+}
+
+void NRF24L01Plus_handler(void *sendData){
+
+	if(sendData == NULL)
+		Error_Handler();
+
+	for(;;){
+
+	}
+
+	vTaskDelete(NULL);
+
+}
+
+/**
+  * @brief  This function is executed in case of error occurrence.
+  * @retval None
+  */
+static void Error_Handler(void)
+{
+  /* USER CODE BEGIN Error_Handler_Debug */
+  /* User can add his own implementation to report the HAL error return state */
+
+  /* USER CODE END Error_Handler_Debug */
+}

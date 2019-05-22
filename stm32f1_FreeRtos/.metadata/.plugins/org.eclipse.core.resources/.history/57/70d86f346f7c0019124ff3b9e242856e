@@ -1,0 +1,49 @@
+#include <math.h>
+#include <string.h>
+
+#include "FreeRTOS.h"
+#include "task.h"
+#include "timers.h"
+#include "queue.h"
+#include "semphr.h"
+#include "event_groups.h"
+
+#include "envmonitor.h"
+#include "nrf24l01+.h"
+
+static void Error_Handler(void);
+
+uint8_t NRF24L01Plus_init(void){
+
+	uint8_t error = 0;
+
+	return error;
+
+}
+
+void NRF24L01Plus_handler(void *sendData){
+
+	if(sendData == NULL)
+		Error_Handler();
+
+	for(;;){
+
+
+
+	}
+
+	vTaskDelete(NULL);
+
+}
+
+/**
+  * @brief  This function is executed in case of error occurrence.
+  * @retval None
+  */
+static void Error_Handler(void)
+{
+  /* USER CODE BEGIN Error_Handler_Debug */
+  /* User can add his own implementation to report the HAL error return state */
+
+  /* USER CODE END Error_Handler_Debug */
+}

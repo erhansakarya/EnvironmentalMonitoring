@@ -9,6 +9,13 @@ extern "C" {
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f1xx_hal.h"
 
+#include "FreeRTOS.h"
+#include "task.h"
+
+extern TaskHandle_t htu21d_handler;
+extern TaskHandle_t tsl2561_handler;
+extern TaskHandle_t nrf24l01plus_handler;
+
 typedef struct{
 	float temperature;
 	float humidity;
@@ -23,13 +30,28 @@ typedef struct{
 }ttp223b_s;
 
 typedef struct{
+	char *sendData;
+}nrf24l01Plus_s;
+
+typedef struct{
 	htu21d_s htu21d;
 	tsl2561_s tsl2561;
 	ttp223b_s ttp223b;
+	nrf24l01Plus_s nrf24l01Plus;
 }sensor_s;
+
+typedef enum{
+	RF = 0,
+	BLE
+}state_e;
+
+typedef struct{
+	state_e communicationChannel;
+}state_s;
 
 typedef struct{
 	sensor_s sensor;
+	state_s state;
 }envmonitor_s;
 
 extern envmonitor_s envmonitor;
@@ -39,9 +61,12 @@ extern envmonitor_s envmonitor;
 						0.00,	\
 						0.00,	\
 						0,	\
+						NULL,	\
+						0,	\
 						}	\
 
-uint8_t ENVMNTR_init(void);
-uint8_t ENVMNTR_createTasks(void);
+extern uint8_t ENVMNTR_init(void);
+extern uint8_t ENVMNTR_createTasks(void);
+extern void ENVMNTR_handler(void *envmonitor);
 
 #endif

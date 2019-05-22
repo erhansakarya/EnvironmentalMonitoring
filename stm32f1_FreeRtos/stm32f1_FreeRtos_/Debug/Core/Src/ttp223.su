@@ -1,4 +1,4 @@
-ttp223.c:6:9:TTP223B_init	32	static
-ttp223.c:27:6:EXTI0_IRQHandler	8	static
-ttp223.c:42:6:HAL_GPIO_EXTI_Callback	16	static
-ttp223.c:56:13:Error_Handler	4	static
+ttp223.c:8:9:TTP223B_init	32	static
+ttp223.c:29:6:EXTI0_IRQHandler	8	static
+ttp223.c:44:6:HAL_GPIO_EXTI_Callback	16	static
+ttp223.c:59:13:Error_Handler	4	static

@@ -1,14 +1,16 @@
 #include "main.h"
 
-#include "FreeRTOS.h"
-#include "task.h"
-
 #include "envmonitor.h"
 #include "tsl2561.h"
 #include "ttp223b.h"
 #include "htu21d.h"
+#include "nrf24l01+.h"
 
 envmonitor_s envmonitor = INIT_ENVMONITOR;
+
+TaskHandle_t htu21d_handler = NULL;
+TaskHandle_t tsl2561_handler = NULL;
+TaskHandle_t nrf24l01plus_handler = NULL;
 
 /* Private variables ---------------------------------------------------------*/
 I2C_HandleTypeDef hi2c1;
@@ -39,6 +41,7 @@ uint8_t ENVMNTR_init(void){
 	error = TSL2561_init();
 	error = TTP223B_init();
 	error = HTU21D_init();
+	error = NRF24L01Plus_init();
 
 	return error;
 
@@ -59,7 +62,7 @@ uint8_t ENVMNTR_createTasks(void){
 	/* NOTE: Create TSL2561 task */
 	if(pdPASS != xTaskCreate(TSL2561_handler, "TSL2561_handler",
 					configMINIMAL_STACK_SIZE, (void *)&envmonitor.sensor.tsl2561.lux,
-					configMAX_PRIORITIES - 1, NULL)){
+					configMAX_PRIORITIES - 1, &tsl2561_handler)){
 
 		  return -1;
 	}
@@ -67,6 +70,22 @@ uint8_t ENVMNTR_createTasks(void){
 	/* NOTE: Create HTU21D task */
 	if(pdPASS != xTaskCreate(HTU21D_handler, "HTU21D_handler",
 					configMINIMAL_STACK_SIZE, (void *)&envmonitor.sensor.htu21d,
+					configMAX_PRIORITIES - 1, &htu21d_handler)){
+
+		  return -1;
+	}
+
+	/* NOTE: Create NRF24L01+ task */
+	if(pdPASS != xTaskCreate(NRF24L01Plus_handler, "NRF24L01Plus_handler",
+					configMINIMAL_STACK_SIZE * 4, (void *)envmonitor.sensor.nrf24l01Plus.sendData,
+					configMAX_PRIORITIES - 1, &nrf24l01plus_handler)){
+
+		  return -1;
+	}
+
+	/* NOTE: Create ENVMNTR task */
+	if(pdPASS != xTaskCreate(ENVMNTR_handler, "ENVMNTR_handler",
+					configMINIMAL_STACK_SIZE * 4, (void *)&envmonitor,
 					configMAX_PRIORITIES - 1, NULL)){
 
 		  return -1;
@@ -76,6 +95,42 @@ uint8_t ENVMNTR_createTasks(void){
 	vTaskStartScheduler();
 
 	return error;
+
+}
+
+/* DO-IT: Make periodic this task */
+void ENVMNTR_handler(void *envmonitor){
+
+	if(envmonitor == NULL)
+		Error_Handler();
+
+	envmonitor_s *envmntr = (envmonitor_s *) envmonitor;
+
+	for(;;){
+
+		switch(envmntr->state.communicationChannel){
+
+			case RF:
+
+				/* NOTE: Send notify to NRF24L01Plus_handler */
+				xTaskNotify(nrf24l01plus_handler, 0, eNoAction);
+
+				break;
+
+			case BLE:
+
+				/* NOTE: Implement ble task */
+
+				break;
+
+			default:
+				Error_Handler();
+
+		}
+
+	}
+
+	vTaskDelete(NULL);
 
 }
 
